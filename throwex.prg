@@ -22,6 +22,15 @@ Function NewException As Void
 	ThrowException(tcMessage, tnErrorNo, tcDetails)
 Endfunc
 && ======================================================================== &&
+&& ReleaseException
+&& ======================================================================== &&
+Function ReleaseException As Void
+	Try
+		Clear Class CustomException
+	Catch
+	Endtry
+Endfunc
+&& ======================================================================== &&
 && Class ThrowException
 && ======================================================================== &&
 Define Class CustomException As Custom
